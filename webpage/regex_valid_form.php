@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$pattern=$_POST["pattern"];
 	$text=$_POST["text"];
 	$replaceText=$_POST["replaceText"];
+	$string = $_POST["string"];
 
 	$replacedText=preg_replace($pattern, $replaceText, $text);
 
@@ -19,6 +20,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 					} else {
 						$match="Does not match!";
 					}
+
+
 }
 
 ?>
@@ -48,7 +51,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 			<dt>Replaced Text</dt>
 			<dd> <code><?=	$replacedText ?></code></dd>
 
+			 
+
 			<dt>&nbsp;</dt>
+
 			<dd><input type="submit" value="Check"></dd>
 		</dl>
 
